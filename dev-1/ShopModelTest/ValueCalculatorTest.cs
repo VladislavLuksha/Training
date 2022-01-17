@@ -24,8 +24,7 @@ namespace ShopModelTests
                 new Product() { Name = "audi", Price = 11000, ProductID = 2 },
                 new Product() { Name = "lada", Price = 9000, ProductID = 3 }
             };
-            int expected = 30000;
-
+            decimal expected = 30000;
             decimal sumOfProduct = valueCalculator.ValueCalc(products);
 
             Assert.AreEqual(expected, sumOfProduct, "The sum of the products is not correct!");

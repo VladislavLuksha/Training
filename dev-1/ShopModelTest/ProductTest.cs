@@ -30,10 +30,8 @@ namespace ShopModelTests
         [Test]
         public void ToStringTest()
         {
-            
-            var expected = $"Product ID: {productFirst.ProductID}, Name: {productFirst.Name}, Price: {productFirst.Price}";
-
-            var resultString = productFirst.ToString();
+            string expected = $"Product ID: {productFirst.ProductID}, Name: {productFirst.Name}, Price: {productFirst.Price}";
+            string resultString = productFirst.ToString();
 
             Assert.AreEqual(expected, resultString);
         }
@@ -41,15 +39,13 @@ namespace ShopModelTests
         [Test]
         public void EqualsProductTest()
         {
-            var expectedFirst = false;
-            var expectedSecond = true;
-
-            var actualFirst = productFirst.Equals(productSecond);
+            bool expectedFirst = false;
+            bool expectedSecond = true;
+            bool actualFirst = productFirst.Equals(productSecond);
 
             // Changing the property of the second object to test for equality with the first object.
             productSecond.Name = "BMW";
-
-            var actualSecond = productFirst.Equals(productSecond);
+            bool actualSecond = productFirst.Equals(productSecond);
 
             // 1. Checks for different product objects
             Assert.AreEqual(expectedFirst, actualFirst, "This method is not overridden for Product class!");
@@ -63,8 +59,7 @@ namespace ShopModelTests
         {
             bool expected = true;
             productSecond.Name = "BMW";
-
-            var actual = productFirst == productSecond;
+            bool actual = productFirst == productSecond;
 
             Assert.AreEqual(expected, actual, "Operator == isn't overriden for Product class!");
         }
@@ -73,8 +68,7 @@ namespace ShopModelTests
         public void OperatorIsNotEqualsTest()
         {
             bool expected = true;
-
-            var actual = productFirst != productSecond;
+            bool actual = productFirst != productSecond;
 
             Assert.AreEqual(expected, actual, "Operator != isn't overriden for Product class!");
         }

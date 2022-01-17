@@ -28,8 +28,7 @@ namespace ShopModelTests
                 new Product() { Name = "lada", Price = 9000, ProductID = 3 }
             };
             decimal expected = 29700;
-
-            var total = discount_1.PercentageValue(valueCalculator.ValueCalc(products));
+            decimal total = discount_1.PercentageValue(valueCalculator.ValueCalc(products));
 
             Assert.AreEqual(expected, total, "Total isn't correct!");
         }

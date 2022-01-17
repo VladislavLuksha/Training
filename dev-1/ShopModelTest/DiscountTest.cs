@@ -13,9 +13,8 @@ namespace ShopModelTests
         [Test]
         public void DiscountOneTest()
         {
-            var expected = 9.9;
-
-            var percentageValue = discount_1.PercentageValue(value);
+            decimal expected = 9.9m;
+            decimal percentageValue = discount_1.PercentageValue(value);
 
             Assert.AreEqual(expected, percentageValue, "Result percentage of value isn't correct!");
         }
@@ -23,9 +22,8 @@ namespace ShopModelTests
         [Test]
         public void DiscountFiveTest()
         {
-            var  expected = 9.5;
-
-            var percentageValue = discount_5.PercentageValue(value);
+            decimal expected = 9.5m;
+            decimal percentageValue = discount_5.PercentageValue(value);
 
             Assert.AreEqual(expected, percentageValue, "Result percentage of value isn't correct!");
         }
