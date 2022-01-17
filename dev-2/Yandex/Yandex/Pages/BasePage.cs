@@ -27,23 +27,13 @@ namespace Yandex.Pages
 
         public void NavigateOnButton(By locator)
         {
-
-            try
-            {
-                Wait.Until(t => Driver.FindElement(locator).Displayed);
-                Driver.FindElement(locator).Click();
-            }
-            catch (UnhandledAlertException)
-            {
-
-            }
+            Wait.Until(t => Driver.FindElement(locator).Displayed);
+            Driver.FindElement(locator).Click();
         }
 
         public void DataInput(string text, By locator)
         {
             var element = Driver.FindElement(locator);
-            element.Clear();
-            element.Click();
             element.SendKeys(text + Keys.Enter);
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Yandex.Utils;
 using OpenQA.Selenium;
+using System;
 
 namespace Yandex.Pages
 {
@@ -21,14 +22,12 @@ namespace Yandex.Pages
             DataInput(authorizationLocators.password, authorizationLocators.passwordInput);
         }
 
-        public bool isLoLoginAuthorizationPage()
+        public bool isLoginAuthorizationPage()
         {
-            LoginAuthorizationPage();
-
             Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(authorizationLocators.messageStatusField));
             var messageStatus = Driver.FindElement(authorizationLocators.messageStatusField).Text;
 
-            return messageStatus != null;
+            return String.IsNullOrEmpty(messageStatus);
         }
     }
 }

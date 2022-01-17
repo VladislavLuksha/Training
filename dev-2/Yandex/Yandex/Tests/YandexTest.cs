@@ -24,12 +24,12 @@ namespace Yandex
         [Test]
         public void IsTrueSingingInTest()
         {
-            var expected = true;
+            bool expected = true;
 
             // 1. Navigate on authorization page.
             yandexPage.NavigateOnAuthorizationPage();
-          
-            var isTrueSingingIn = authorizationPage.isLoLoginAuthorizationPage();
+            authorizationPage.LoginAuthorizationPage();
+            bool isTrueSingingIn = authorizationPage.isLoginAuthorizationPage();
 
             // 1. Checking if you're signed in.
             Assert.AreEqual(expected, isTrueSingingIn, "Login failed!");
@@ -38,7 +38,7 @@ namespace Yandex
         [TearDown]
         public void CloseBrowser()
         {
-            Driver.Close();
+            Driver.Quit();
         }
     }
 }
