@@ -30,7 +30,7 @@ f) 1. //div[@class ='b-folders']//span[@class='b-folders__folder__name']
 
 g) 1. //span[@class = 'b-folders__folder' or contains(@class, ' b-folders__folder_unread')][position()>2 or position() =1]
   
-   2. dont know 
+   2. .b-folders__folder__link:not([href="/lite/sent"]) 
    
 # New email page:
 
@@ -60,7 +60,7 @@ m) 1. //input[@class = 'b-compose__file']/..//input[contains(@class, 'b-form-but
 
 n) 1. //button[@name='nosend']//ancestor::div[@class='b-buttons']//input[contains(@class, 'b-form-button')]
    
-   2. dont know 
+## 2. dont know 
 
 o) 1. //input[contains(@class, 'b-compose__cancel')]/preceding-sibling::input[contains(@class, 'b-form-button')]
 
