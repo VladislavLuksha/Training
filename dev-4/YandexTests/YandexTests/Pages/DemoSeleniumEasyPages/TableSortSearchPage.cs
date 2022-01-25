@@ -11,12 +11,12 @@ namespace YandexTests.Pages
         private readonly By rowsTableLocator = By.XPath("//tbody/tr");
         private readonly By tagNameForRow = By.TagName("td");
 
+        protected override string Url => "https://demo.seleniumeasy.com/table-sort-search-demo.html";
+
         public TableSortSearchPage(IWebDriver driver) : base(driver)
         {
 
         }
-
-        protected override string Url => "https://demo.seleniumeasy.com/table-sort-search-demo.html";
 
         public void SelectOptionInDropDown(string option)
         {

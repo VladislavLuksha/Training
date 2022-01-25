@@ -15,6 +15,7 @@ namespace YandexTests.Tests
         public void Setup()
         {
             Driver = new ChromeDriver();
+            Driver.Manage().Window.Maximize();
         }
 
         [TearDown]

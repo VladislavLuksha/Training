@@ -6,13 +6,13 @@ namespace YandexTests.Pages
 {
     public abstract class BasePage
     {
+        private const int WAIT_FOR_ELEMENT_TIMEOUT = 20;
+
         protected IWebDriver Driver { get; set; }
         
         protected WebDriverWait Wait { get; set; }
 
         protected virtual string Url { get; }
-
-        private const int WAIT_FOR_ELEMENT_TIMEOUT = 20;
 
         public BasePage(IWebDriver driver)
         {
@@ -35,6 +35,11 @@ namespace YandexTests.Pages
         public IWebElement WaitingForElement(By locator)
         {
             return Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(locator));
+        }
+
+        public void NavigateOnButton(By locator)
+        {
+            WaitingForElement(locator).Click();
         }
     }
 }

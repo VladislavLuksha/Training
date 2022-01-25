@@ -6,7 +6,6 @@ using YandexTests.Tests;
 namespace YandexTests
 {
     [TestFixture]
-    [Parallelizable(ParallelScope.All)]
     public class YandexMailTest : BaseTest
     {
         private YandexMailPage yandexMailPage;
@@ -29,12 +28,13 @@ namespace YandexTests
         [Test, TestCaseSource("AddDifferentCredentials")]
         public void LoginYandexMail(string userName, string password)
         {
-            bool expected = true;
+            bool loginStatusExpected = true;
+
             authorizationPage = yandexMailPage.LogInAuthorizationPage();
             authorizationPage.LoginAuthorizationPage(userName, password);
-            var actual = authorizationPage.WaitForAfterLoginPage();
+            bool loginStatusActual = authorizationPage.WaitForAfterLoginPage();
 
-            Assert.AreEqual(expected, actual, "Login failed on Yandex Mail page!");
+            Assert.AreEqual(loginStatusExpected, loginStatusActual, "Login failed on Yandex Mail page!");
         }
     }
 }

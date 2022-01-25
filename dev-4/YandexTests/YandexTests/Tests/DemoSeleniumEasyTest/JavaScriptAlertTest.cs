@@ -20,23 +20,17 @@ namespace YandexTests.Tests
         public void TestJavaScriptConfirmBoxAcceptTest()
         {
             string expectedAlertText = "You pressed OK!";
-
+          
             // 1. Click on Click me! button
-            IWebElement element = javaScriptAlertPage.WaitingForElement(javaScriptAlertPage.clickButtonForConfirmBox);
-            element.Click();
+            javaScriptAlertPage.ClickOnButtonForConfirmBox();
 
-            try
-            {
-                IAlert alert = Driver.SwitchTo().Alert();
-                alert.Accept();
-                string message = javaScriptAlertPage.WaitingForElement(javaScriptAlertPage.confirmInput).Text;
+            IAlert alert = Driver.SwitchTo().Alert();
 
-                Assert.AreEqual(expectedAlertText, message, "Dont displays correct message on Accept!");
-            }
-            catch(NoAlertPresentException e)
-            {
-                Assert.Pass(e.StackTrace);
-            }
+            // 2. Choose accept
+            alert.Accept();
+            string confirmMessageActual = javaScriptAlertPage.GetTextFromConfirmBox();
+
+            Assert.AreEqual(expectedAlertText, confirmMessageActual, "Dont displays correct message on Accept!");
         }
 
         [Test]
@@ -45,21 +39,15 @@ namespace YandexTests.Tests
             string expectedAlertText = "You pressed Cancel!";
 
             // 1. Click on Click me! button
-            IWebElement element = javaScriptAlertPage.WaitingForElement(javaScriptAlertPage.clickButtonForConfirmBox);
-            element.Click();
+            javaScriptAlertPage.ClickOnButtonForConfirmBox();
 
-            try
-            {
-                IAlert alert = Driver.SwitchTo().Alert();
-                alert.Dismiss();
-                string message = javaScriptAlertPage.WaitingForElement(javaScriptAlertPage.confirmInput).Text;
+            IAlert alert = Driver.SwitchTo().Alert();
 
-                Assert.AreEqual(expectedAlertText, message, "Dont displays correct message on Accept!");
-            }
-            catch (NoAlertPresentException e)
-            {
-                Assert.Pass(e.StackTrace);
-            }
+            // 2. Choose dismiss
+            alert.Dismiss();
+            string confirmMessageActual = javaScriptAlertPage.GetTextFromConfirmBox();
+
+            Assert.AreEqual(expectedAlertText, confirmMessageActual, "Dont displays correct message on Accept!");
         }
 
         [Test]
@@ -68,47 +56,32 @@ namespace YandexTests.Tests
             string expectedAlertText = "I am an alert box!";
 
             // 1. Click on Click me! button
-            IWebElement element = javaScriptAlertPage.WaitingForElement(javaScriptAlertPage.clickButtonForAlertBox);
-            element.Click();
+            javaScriptAlertPage.ClickOnButtonForAlertBox();
+            IAlert alert = Driver.SwitchTo().Alert();
+            string alertMessageActual = alert.Text;
 
-            try
-            {
-                IAlert alert = Driver.SwitchTo().Alert();
-                string message = alert.Text;
-                alert.Accept();
+            // 2. Choose Accept
+            alert.Accept();
 
-                Assert.AreEqual(expectedAlertText, message, "Dont displays correct message on Accept!");
-            }
-            catch (NoAlertPresentException e)
-            {
-                Assert.Pass(e.StackTrace);
-            }
+            Assert.AreEqual(expectedAlertText, alertMessageActual, "Dont displays correct message on Accept!");
         }
 
         [Test]
         public void TestJavaScriptAlertBoxPromptTest()
         {
             string data = "Vladislav";
-            string expectedAlertText = $"You have entered '{data}' !";
-
+            string expectedAlertBoxPromptText = $"You have entered '{data}' !";
 
             // 1. Click for Promt Box button
-            IWebElement element = javaScriptAlertPage.WaitingForElement(javaScriptAlertPage.clickForPromptBoxButton);
-            element.Click();
+            javaScriptAlertPage.ClickOnForPromptBoxButton();
+            IAlert alert = Driver.SwitchTo().Alert();
 
-            try
-            {
-                IAlert alert = Driver.SwitchTo().Alert();
-                alert.SendKeys(data);
-                alert.Accept();
-                string message = javaScriptAlertPage.WaitingForElement(javaScriptAlertPage.promtInput).Text;
+            // 2. Send data and choose accept 
+            alert.SendKeys(data);
+            alert.Accept();
+            string alertBoxPromptMessageActual = javaScriptAlertPage.GetTextFromPromptBox();
 
-                Assert.AreEqual(expectedAlertText, message, "Dont displays correct message on Accept!");
-            }
-            catch (NoAlertPresentException e)
-            {
-                Assert.Pass(e.StackTrace);
-            }
+            Assert.AreEqual(expectedAlertBoxPromptText, alertBoxPromptMessageActual, "Dont displays correct message on Accept!");
         }
     }
 }

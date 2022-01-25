@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using YandexTests.Pages;
 
 namespace YandexTests.Tests
@@ -19,17 +18,16 @@ namespace YandexTests.Tests
         [Test]
         public void WaitForUserTest()
         {
-            bool expected = true;
+            bool isUserWaitedExpected = true;
 
             // 1. Click Get New User button
-            IWebElement getNewUserButton = dynamicDataLoadingPage.WaitingForElement(dynamicDataLoadingPage.getNewUser);
-            getNewUserButton.Click();
+            dynamicDataLoadingPage.ClickOnGetNewUserButton();
 
             // 2. Check if the user has arrived
-            bool actual = dynamicDataLoadingPage.isUserWaited();
+            bool isUserWaitedActual = dynamicDataLoadingPage.IsUserWaited();
 
             // 3. Verify that the user waited
-            Assert.AreEqual(expected, actual, "User is not found!");
+            Assert.AreEqual(isUserWaitedExpected, isUserWaitedActual, "User is not found!");
         }
     }
 }

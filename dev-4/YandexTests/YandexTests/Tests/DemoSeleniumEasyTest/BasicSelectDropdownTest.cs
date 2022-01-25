@@ -21,7 +21,7 @@ namespace YandexTests.Tests
             int expectedOptions = 3;
            
             // 1. Select 3 random options in “Multi Select List Demo” section
-            var actualSelectedOptions = demoSeleniumEasyPage.ChooseRandomOptions();
+            var actualSelectedOptions = demoSeleniumEasyPage.ChooseThreeRandomOptions();
 
             // 1. Verify that 3 random options are selected
             Assert.AreEqual(expectedOptions, actualSelectedOptions.Count, "3 options aren't selected!");
