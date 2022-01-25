@@ -13,7 +13,7 @@ namespace Patterns
         private IWebDriver driver;
         private YandexPage yandexPage;
         private CredentialsConstants credentialsConstants;
-
+     
         [SetUp]
         public void Setup()
         {
@@ -34,7 +34,10 @@ namespace Patterns
         public void GoToAuthorizationPageTest()
         {
             bool loginStatusExpected = true;
-         
+            string fileName = "YandexPageScreenshot.png";
+
+            yandexPage.TakeScreenshotForYandexPage(fileName);
+            
             // 1. Login to Authorization Page
             AuthorizationPage authorizationPage = yandexPage.GoToAuthorizationPage();
       
@@ -66,7 +69,7 @@ namespace Patterns
             // 1. Verify that the Authorization page is logged out 
             Assert.AreEqual(loginStatusExpected, logOutStatusActual, "The Authorization page isn't logged out!!!");
         }
-        
+     
         [TearDown]
         public void Cleanup()
         {
