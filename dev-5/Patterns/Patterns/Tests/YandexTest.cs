@@ -1,3 +1,6 @@
+using Allure.Commons;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -8,6 +11,9 @@ using Patterns.Utils;
 namespace Patterns
 {
     [TestFixture]
+    [AllureNUnit]
+    [AllureSuite("YandexTest")]
+    [AllureDisplayIgnored]
     public class YandexTest
     {
         private IWebDriver driver;
@@ -30,7 +36,14 @@ namespace Patterns
             credentialsConstants = credentialsConstantsObject;
         }
 
-        [Test]
+        [Test(Description = "The test verifies that the Authorization page is logged in")]
+        [AllureTag("CI")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureIssue("ISSUE-1")]
+        [AllureTms("TMS-12")]
+        [AllureOwner("Vladislav")]
+        [AllureSubSuite("GoTo")]
+        [AllureStep("Checks that Authorization Page is logged in: {loginStatusExpected}, {loginStatusActual}")]
         public void GoToAuthorizationPageTest()
         {
             bool loginStatusExpected = true;
@@ -50,7 +63,13 @@ namespace Patterns
             Assert.AreEqual(loginStatusExpected, loginStatusActual, "The Authorization page isn't logged in!!!");
         }
 
-        [Test]
+        [Test(Description = "The test verifies that the Authorization page is logged out")]
+        [AllureTag("CI")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureIssue("ISSUE-2")]
+        [AllureTms("TMS-5")]
+        [AllureOwner("Vladislav")]
+        [AllureSubSuite("LogOut")]
         public void LogOutToAuthorizationPageTest()
         {
             bool loginStatusExpected = true;

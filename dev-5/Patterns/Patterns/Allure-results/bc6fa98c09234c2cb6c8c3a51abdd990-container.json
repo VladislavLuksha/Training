@@ -1,0 +1,44 @@
+{
+  "uuid": "2df4016f-ccf8-4537-88e6-1f9d6ca6259c-tc-0-1000",
+  "name": "Patterns.YandexTest.GoToAuthorizationPageTest",
+  "children": [
+    "7871f5f3-50fe-449f-8263-82c3bb7dd766-tr-0-1001"
+  ],
+  "befores": [
+    {
+      "name": "Setup",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1643274614315,
+      "stop": 1643274614315
+    }
+  ],
+  "afters": [
+    {
+      "name": "Cleanup",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1643274614315,
+      "stop": 1643274614315
+    }
+  ],
+  "links": [],
+  "start": 1643274606198,
+  "stop": 1643274614342
+}

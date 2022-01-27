@@ -1,0 +1,112 @@
+{
+  "uuid": "cc304e6b-0cc7-4bb9-bfde-edd942b09306-tr-0-1002",
+  "historyId": "Patterns.YandexTest.LogOutToAuthorizationPageTest",
+  "fullName": "Patterns.YandexTest.LogOutToAuthorizationPageTest",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MSQ-NBW-8404"
+    },
+    {
+      "name": "package",
+      "value": "Patterns"
+    },
+    {
+      "name": "testMethod",
+      "value": "LogOutToAuthorizationPageTest"
+    },
+    {
+      "name": "testClass",
+      "value": "YandexTest"
+    },
+    {
+      "name": "tag",
+      "value": "CI"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "owner",
+      "value": "Vladislav"
+    },
+    {
+      "name": "subSuite",
+      "value": "LogOut"
+    },
+    {
+      "name": "suite",
+      "value": "YandexTest"
+    }
+  ],
+  "links": [
+    {
+      "name": "ISSUE-2",
+      "url": "https://jira.com/browse/ISSUE-2",
+      "type": "issue"
+    },
+    {
+      "name": "TMS-5",
+      "url": "https://testrail.com/browse/TMS-5",
+      "type": "tms"
+    }
+  ],
+  "name": "LogOutToAuthorizationPageTest",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "LogOutToAuthorizationPageTest"
+  },
+  "stage": "finished",
+  "description": "The test verifies that the Authorization page is logged out\n",
+  "steps": [
+    {
+      "name": "LogOutToAuthorizationPageTest",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "Checks that Authorization Page is logged out",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1643274623103,
+          "stop": 1643274623134
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "1ebaad176720427c9fe7eaba2f9fee75-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1643274614351,
+      "stop": 1643274623301
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1643274614351,
+  "stop": 1643274623301
+}
