@@ -5,6 +5,25 @@ namespace AutomationPracticeTests.Utilities.Enums
     {
         Chrome,
         Firefox,
+        InternetExplorer,
+        IE,
+        Safari,
+        Edge,
+        EdgeChromium,
+
+        /// <summary>
+        /// CloudProvider parallel cross browsers testing
+        /// </summary>
+        CloudProvider,
+
+        /// <summary>
+        /// Remote Web driber
+        /// </summary>
+        RemoteWebDriver,
+
+        /// <summary>
+        /// Not supported browser
+        /// </summary>
         None
     }
 }
