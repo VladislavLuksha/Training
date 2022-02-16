@@ -22,10 +22,10 @@ namespace AutomationPractice.Core.WebDriver.Factory
             {
                 case BrowserType.Chrome:
                     ChromeOptions = new ChromeOptions();
-                    ChromeOptions.PlatformName = "ddd";
+                    ChromeOptions.PlatformName = "Windows 10";
                     DriverHelper.SetRemoteDriverBrowserOptions(ChromeOptions);
-                    ChromeOptions.BrowserVersion = "";
-                    driver = new RemoteWebDriver(Configuration.RemoteWebDriverHub, ChromeOptions);
+                    ChromeOptions.BrowserVersion = "latest";
+                    driver = new RemoteWebDriver(Configuration.RemoteWebDriverHub, ChromeOptions.ToCapabilities());
                     break;
             }
 
