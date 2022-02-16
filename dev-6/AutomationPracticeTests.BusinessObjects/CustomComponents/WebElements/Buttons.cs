@@ -1,6 +1,5 @@
 ﻿using AutomationPracticeTests.WebDriver.Factory;
 using OpenQA.Selenium;
-using System;
 
 namespace AutomationPracticeTests.CustomComponents
 {
@@ -20,6 +19,5 @@ namespace AutomationPracticeTests.CustomComponents
          .FindElement(By.Id(Name));
 
         public void Click() => GetButtonById().Click();
-        
     }
 }

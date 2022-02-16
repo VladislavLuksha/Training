@@ -1,5 +1,4 @@
-﻿
-namespace AutomationPracticeTests.Entities
+﻿namespace AutomationPracticeTests.Entities
 {
     public class User
     {

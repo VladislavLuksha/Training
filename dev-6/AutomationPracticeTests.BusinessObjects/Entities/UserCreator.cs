@@ -11,7 +11,7 @@ namespace AutomationPracticeTests.Entities
         {
             User user;
             string folderPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Resources"));
-           // D:\AutomationPracticeTests\AutomationPracticeTests\Resources\usersData.json
+           
             using (StreamReader file = File.OpenText($@"{folderPath}\usersData.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();

@@ -1,7 +1,6 @@
 ﻿using AutomationPracticeTests.CustomComponents;
 using AutomationPracticeTests.CustomComponents.WebElements;
 using AutomationPracticeTests.PageObjects.BasePages;
-using AutomationPracticeTests.WebDriver.Factory;
 using OpenQA.Selenium;
 
 namespace AutomationPracticeTests.PageObjects.Pages

@@ -21,7 +21,7 @@ namespace AutomationPracticeTests.PageObjects.Pages
         public WomenPage ChooseAnyProduct()
         { 
             Product.Click();
-
+            
             return this;
         }
 
