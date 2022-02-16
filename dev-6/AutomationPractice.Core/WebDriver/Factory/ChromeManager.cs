@@ -8,6 +8,7 @@ namespace AutomationPracticeTests.WebDriver.Factory
     {
         public ChromeManager() : base(ChromeDriverService.CreateDefaultService(), new ChromeOptions())
         {
+            
         }
 
         public override IWebDriver GetDriver(double timeoutSec) =>

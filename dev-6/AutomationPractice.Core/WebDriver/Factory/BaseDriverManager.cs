@@ -18,24 +18,10 @@ namespace AutomationPracticeTests.WebDriver.Factory
 
         protected FirefoxDriverService FirefoxDriverService { get; set; }
 
-        public string SauceUserName =>
-            Environment.GetEnvironmentVariable("SAUCE_USERNAME");
-
-        public string SauceAccessKey =>
-            Environment.GetEnvironmentVariable("SAUCE_ACCESS_KEY");
-
         public BaseDriverManager(ChromeDriverService chromeDriverService, ChromeOptions chromeOptions)
         {
             ChromeDriverService = chromeDriverService;
             ChromeOptions = chromeOptions;
-
-            //SauceOptions = new Dictionary<string, object>
-            //{
-            //    ["username"] = SauceUserName,
-            //    ["accessKey"] = SauceAccessKey
-            //};
-
-            //ChromeOptions.AddAdditionalChromeOption("sauce:options", SauceOptions);
         }
 
         public BaseDriverManager(FirefoxDriverService firefoxDriverService, FirefoxOptions firefoxOptions)
@@ -45,6 +31,10 @@ namespace AutomationPracticeTests.WebDriver.Factory
             //FirefoxOptions.AddAdditionalFirefoxOption("sauce:options", SauceOptions);
         }
 
+        public BaseDriverManager() 
+        {
+        }
+        
         public abstract IWebDriver GetDriver(double timeoutSec);
     }
 }

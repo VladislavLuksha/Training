@@ -1,5 +1,4 @@
-﻿
-namespace AutomationPracticeTests.WebDriver.Factory
+﻿namespace AutomationPracticeTests.WebDriver.Factory
 {
     public class ConfigurationModel
     {

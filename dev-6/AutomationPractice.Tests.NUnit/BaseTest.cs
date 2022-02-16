@@ -1,5 +1,4 @@
-﻿using AutomationPracticeTests.PageObjects;
-using AutomationPracticeTests.Utilities.Logger;
+﻿using AutomationPracticeTests.Utilities.Logger;
 using AutomationPracticeTests.WebDriver.Factory;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
@@ -21,7 +20,7 @@ namespace AutomationPracticeTests.BaseTests
             Log.Info("Browser SetUp");
 
             Browser = Browser.Instance;
-            Browser.WindowMaximise();
+            //Browser.WindowMaximise();
         }
 
         [SetUp]

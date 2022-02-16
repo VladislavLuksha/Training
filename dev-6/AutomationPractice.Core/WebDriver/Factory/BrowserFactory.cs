@@ -1,4 +1,5 @@
-﻿using AutomationPracticeTests.Utilities.Enums;
+﻿using AutomationPractice.Core.WebDriver.Factory;
+using AutomationPracticeTests.Utilities.Enums;
 using OpenQA.Selenium;
 using System;
 
@@ -22,6 +23,12 @@ namespace AutomationPracticeTests.WebDriver.Factory
                     {
                         FirefoxManager firefoxManager = new FirefoxManager();
                         driver = firefoxManager.GetDriver(timeoutSec);
+                        break;
+                    }
+                case BrowserType.RemoteWebDriver:
+                    {
+                        RemoteWebManager remoteWebManager = new RemoteWebManager();
+                        driver = remoteWebManager.GetDriver(timeoutSec);
                         break;
                     }
                 default:

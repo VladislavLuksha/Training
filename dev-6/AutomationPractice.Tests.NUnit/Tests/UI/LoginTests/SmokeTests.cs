@@ -1,16 +1,25 @@
+using Allure.Commons;
 using AutomationPracticeTests.BaseTests;
 using AutomationPracticeTests.Entities;
 using AutomationPracticeTests.PageObjects.BasePages.Pages;
 using AutomationPracticeTests.PageObjects.Pages;
 using AutomationPracticeTests.Utilities.Enums;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 
 namespace AutomationPracticeTests
 {
     [TestFixture]
+    [AllureNUnit]
+    [AllureDisplayIgnored]
     public class SmokeTests : BaseTest
     {
-        [Test]
+        
+        [Test(Description = "Login with valid credentials")]
+        [AllureIssue("ISSUE-1")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Anton")]
         public void TestLogin_LoginWithValidCredentials_UserSuccesfullyLoggedIn()
         {
             bool isLoggedInExpected = true;

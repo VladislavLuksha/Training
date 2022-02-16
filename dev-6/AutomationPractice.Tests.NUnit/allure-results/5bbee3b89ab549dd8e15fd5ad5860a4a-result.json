@@ -1,0 +1,82 @@
+{
+  "uuid": "889a9263-7918-49fc-a17e-ae342cbe1bd5-tr-0-1001",
+  "historyId": "AutomationPracticeTests.SmokeTests.TestLogin_LoginWithValidCredentials_UserSuccesfullyLoggedIn",
+  "fullName": "AutomationPracticeTests.SmokeTests.TestLogin_LoginWithValidCredentials_UserSuccesfullyLoggedIn",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MSQ-NBW-8404"
+    },
+    {
+      "name": "package",
+      "value": "AutomationPracticeTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "TestLogin_LoginWithValidCredentials_UserSuccesfullyLoggedIn"
+    },
+    {
+      "name": "testClass",
+      "value": "SmokeTests"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "owner",
+      "value": "Anton"
+    }
+  ],
+  "links": [
+    {
+      "name": "ISSUE-1",
+      "url": "ISSUE-1",
+      "type": "issue"
+    }
+  ],
+  "name": "TestLogin_LoginWithValidCredentials_UserSuccesfullyLoggedIn",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.WebDriverException : chrome not reachable\n  (Session info: chrome=98.0.4758.82)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at AutomationPracticeTests.WebDriver.Factory.DriverHelper.<>c__DisplayClass0_0.<FindElement>b__0(IWebDriver d) in D:\\task1\\Training\\dev-6\\AutomationPractice.Core\\WebDriver\\DriverHelper.cs:line 16\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at AutomationPracticeTests.WebDriver.Factory.DriverHelper.FindElement(By locator) in D:\\task1\\Training\\dev-6\\AutomationPractice.Core\\WebDriver\\DriverHelper.cs:line 14\r\n   at AutomationPracticeTests.CustomComponents.Inputs.GetInputById() in D:\\task1\\Training\\dev-6\\AutomationPracticeTests.BusinessObjects\\CustomComponents\\WebElements\\Inputs.cs:line 18\r\n   at AutomationPracticeTests.CustomComponents.Inputs.TypeText(String textInput) in D:\\task1\\Training\\dev-6\\AutomationPracticeTests.BusinessObjects\\CustomComponents\\WebElements\\Inputs.cs:line 21\r\n   at AutomationPracticeTests.PageObjects.BasePages.Pages.AuthenticationPage.FillInLoginForm(String userName, String password) in D:\\task1\\Training\\dev-6\\AutomationPracticeTests.BusinessObjects\\PageObjects\\Pages\\AuthenticationPage.cs:line 32\r\n   at AutomationPracticeTests.SmokeTests.TestLogin_LoginWithValidCredentials_UserSuccesfullyLoggedIn() in D:\\task1\\Training\\dev-6\\AutomationPractice.Tests.NUnit\\Tests\\UI\\LoginTests\\SmokeTests.cs:line 34"
+  },
+  "stage": "finished",
+  "description": "Login with valid credentials\n",
+  "steps": [
+    {
+      "name": "TestLogin_LoginWithValidCredentials_UserSuccesfullyLoggedIn",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverException : chrome not reachable\n  (Session info: chrome=98.0.4758.82)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at AutomationPracticeTests.WebDriver.Factory.DriverHelper.<>c__DisplayClass0_0.<FindElement>b__0(IWebDriver d) in D:\\task1\\Training\\dev-6\\AutomationPractice.Core\\WebDriver\\DriverHelper.cs:line 16\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at AutomationPracticeTests.WebDriver.Factory.DriverHelper.FindElement(By locator) in D:\\task1\\Training\\dev-6\\AutomationPractice.Core\\WebDriver\\DriverHelper.cs:line 14\r\n   at AutomationPracticeTests.CustomComponents.Inputs.GetInputById() in D:\\task1\\Training\\dev-6\\AutomationPracticeTests.BusinessObjects\\CustomComponents\\WebElements\\Inputs.cs:line 18\r\n   at AutomationPracticeTests.CustomComponents.Inputs.TypeText(String textInput) in D:\\task1\\Training\\dev-6\\AutomationPracticeTests.BusinessObjects\\CustomComponents\\WebElements\\Inputs.cs:line 21\r\n   at AutomationPracticeTests.PageObjects.BasePages.Pages.AuthenticationPage.FillInLoginForm(String userName, String password) in D:\\task1\\Training\\dev-6\\AutomationPracticeTests.BusinessObjects\\PageObjects\\Pages\\AuthenticationPage.cs:line 32\r\n   at AutomationPracticeTests.SmokeTests.TestLogin_LoginWithValidCredentials_UserSuccesfullyLoggedIn() in D:\\task1\\Training\\dev-6\\AutomationPractice.Tests.NUnit\\Tests\\UI\\LoginTests\\SmokeTests.cs:line 34"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "dfee32ef8b81408cb4ae344c240dd9fa-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1645005674211,
+      "stop": 1645005692868
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1645005674210,
+  "stop": 1645005692870
+}

@@ -6,7 +6,6 @@ using AutomationPracticeTests.Utilities;
 using AutomationPracticeTests.Utilities.Enums;
 using NUnit.Framework;
 
-
 namespace AutomationPracticeTests.Tests.UI.RegistrationTests
 {
     [TestFixture]
