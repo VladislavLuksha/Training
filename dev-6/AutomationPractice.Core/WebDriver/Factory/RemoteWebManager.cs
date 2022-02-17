@@ -1,9 +1,10 @@
-﻿using AutomationPracticeTests.Utilities.Enums;
+﻿using AutomationPractice.Core.Helpers;
+using AutomationPracticeTests.Utilities.Enums;
 using AutomationPracticeTests.WebDriver.Factory;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
-using System.Collections.Specialized;
 
 namespace AutomationPractice.Core.WebDriver.Factory
 {
@@ -11,10 +12,13 @@ namespace AutomationPractice.Core.WebDriver.Factory
     {
         public RemoteWebManager() : base() { }
 
+
         public override IWebDriver GetDriver(double timeoutSec)
         {
             IWebDriver driver = null;
-            var setting = Configuration.GetNameValueSectionFromAppsettingsJson("environments:" + "ChromeWindows") as NameValueCollection; 
+
+            var driverCapabilitiesConf = Configuration.GetNameValueSectionFromAppsettingsJson("DriverCapabilities");
+            var setting = Configuration.GetNameValueSectionFromAppsettingsJson("environments:" + CrossBrowserEnvironment);
          
             var browserType = DriverHelper.GetBrowserTypeForRemoteDriver(setting);
 
@@ -22,15 +26,27 @@ namespace AutomationPractice.Core.WebDriver.Factory
             {
                 case BrowserType.Chrome:
                     ChromeOptions = new ChromeOptions();
-                    ChromeOptions.PlatformName = "Windows 10";
-                    DriverHelper.SetRemoteDriverBrowserOptions(ChromeOptions);
-                    ChromeOptions.BrowserVersion = "latest";
+                    DriverHelper.SetRemoteDriverBrowserOptions(driverCapabilitiesConf, setting, ChromeOptions);
                     driver = new RemoteWebDriver(Configuration.RemoteWebDriverHub, ChromeOptions.ToCapabilities());
                     break;
+                case BrowserType.Firefox:
+                    FirefoxOptions = new FirefoxOptions();
+                    DriverHelper.SetRemoteDriverBrowserOptions(driverCapabilitiesConf, setting, FirefoxOptions);
+                    driver = new RemoteWebDriver(Configuration.RemoteWebDriverHub, FirefoxOptions.ToCapabilities());
+                    break;
+                //case BrowserType.IE:
+                //    ChromeOptions = new ChromeOptions();
+                //    DriverHelper.SetRemoteDriverBrowserOptions(setting, ChromeOptions);
+                //    driver = new RemoteWebDriver(Configuration.RemoteWebDriverHub, ChromeOptions.ToCapabilities());
+                //    break;
+                //case BrowserType.Edge:
+                //    ChromeOptions = new ChromeOptions();
+                //    DriverHelper.SetRemoteDriverBrowserOptions(setting, ChromeOptions);
+                //    driver = new RemoteWebDriver(Configuration.RemoteWebDriverHub, ChromeOptions.ToCapabilities());
+                //    break;
             }
 
             return driver;
         }
-           
     }
 }

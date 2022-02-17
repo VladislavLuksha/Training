@@ -1,8 +1,7 @@
-﻿using AutomationPracticeTests.WebDriver.Factory;
+﻿using AutomationPractice.Core.Extensions;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace AutomationPracticeTests.CustomComponents.WebElements
 {
@@ -15,7 +14,7 @@ namespace AutomationPracticeTests.CustomComponents.WebElements
             Name = name;
         }
 
-        public IList<IWebElement> GetInputByXPath() => DriverHelper
+        public IList<IWebElement> GetInputByXPath() => DriverExtensions
            .FindElements(By.XPath($"//div[@class = '{Name}']"));
 
         //public string[][] GetTable()

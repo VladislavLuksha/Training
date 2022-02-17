@@ -1,4 +1,4 @@
-﻿using AutomationPracticeTests.WebDriver.Factory;
+﻿using AutomationPractice.Core.Extensions;
 using OpenQA.Selenium;
 
 namespace AutomationPracticeTests.CustomComponents
@@ -12,7 +12,7 @@ namespace AutomationPracticeTests.CustomComponents
             Name = dropdownName;
         }
 
-        public IWebElement GetDropdownById() => DriverHelper
+        public IWebElement GetDropdownById() => DriverExtensions
             .FindElement(By.Id(Name));
     }
 }

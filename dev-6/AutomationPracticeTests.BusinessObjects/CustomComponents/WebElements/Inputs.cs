@@ -1,4 +1,4 @@
-﻿using AutomationPracticeTests.WebDriver.Factory;
+﻿using AutomationPractice.Core.Extensions;
 using OpenQA.Selenium;
 
 namespace AutomationPracticeTests.CustomComponents
@@ -12,10 +12,10 @@ namespace AutomationPracticeTests.CustomComponents
             Name = inputName;
         }
 
-        public IWebElement GetInputByName() => DriverHelper
+        public IWebElement GetInputByName() => DriverExtensions
             .FindElement(By.XPath($"//input[contains(@placeholder, '{Name}')] | //input[contains(@class, '{Name}')] | //input[contains(@value, '{Name}')] | //input[contains(@type, '{Name}')] | //input[contains(@id, '{Name}')]"));
 
-        public IWebElement GetInputById() => DriverHelper
+        public IWebElement GetInputById() => DriverExtensions
            .FindElement(By.Id(Name));
 
         public void TypeText(string textInput) => GetInputById().SendKeys(textInput);

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace AutomationPracticeTests.Utilities
 {
-    public class RandomGenerator
+    public class RandomGeneratorHelper
     {
         private static string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         private static string emailFormat = "@gmail.com";

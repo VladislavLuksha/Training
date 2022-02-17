@@ -1,4 +1,4 @@
-﻿using AutomationPracticeTests.WebDriver.Factory;
+﻿using AutomationPractice.Core.Extensions;
 using OpenQA.Selenium;
 using System;
 using System.Collections.ObjectModel;
@@ -38,7 +38,7 @@ namespace AutomationPracticeTests.CustomComponents
         {
             try
             {
-                Element = DriverHelper.FindElement(Locator);
+                Element = DriverExtensions.FindElement(Locator);
             }
             catch(Exception)
             {
@@ -55,7 +55,7 @@ namespace AutomationPracticeTests.CustomComponents
             GetElement().Click();
         }
 
-        public bool Invisibility => DriverHelper.InvisibilityOfElementLocated(Locator);
+        public bool Invisibility => DriverExtensions.InvisibilityOfElementLocated(Locator);
 
         public string TagName => throw new System.NotImplementedException();
 

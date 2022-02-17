@@ -38,7 +38,7 @@ namespace AutomationPracticeTests.WebDriver.Factory
             Log.Info($"Page {url} is opened");
         }
 
-        public static void Quit()
+        public static void Stop()
         {
             Driver.Quit();
             currentInstance = null;

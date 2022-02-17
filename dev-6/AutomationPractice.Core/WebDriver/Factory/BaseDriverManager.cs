@@ -1,8 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using System;
-using System.Collections.Generic;
 
 namespace AutomationPracticeTests.WebDriver.Factory
 {
@@ -12,11 +10,11 @@ namespace AutomationPracticeTests.WebDriver.Factory
 
         protected FirefoxOptions FirefoxOptions { get; set; }
 
-        public Dictionary<string, object> SauceOptions { get; set; }
-
         protected ChromeDriverService ChromeDriverService { get; set; }
 
         protected FirefoxDriverService FirefoxDriverService { get; set; }
+
+        public static string CrossBrowserEnvironment { get; set; }
 
         public BaseDriverManager(ChromeDriverService chromeDriverService, ChromeOptions chromeOptions)
         {
@@ -28,7 +26,6 @@ namespace AutomationPracticeTests.WebDriver.Factory
         {
             FirefoxDriverService = firefoxDriverService;
             FirefoxOptions = firefoxOptions;
-            //FirefoxOptions.AddAdditionalFirefoxOption("sauce:options", SauceOptions);
         }
 
         public BaseDriverManager() 

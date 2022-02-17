@@ -1,4 +1,4 @@
-﻿using AutomationPracticeTests.WebDriver.Factory;
+﻿using AutomationPractice.Core.Extensions;
 using OpenQA.Selenium;
 
 namespace AutomationPracticeTests.CustomComponents
@@ -12,10 +12,10 @@ namespace AutomationPracticeTests.CustomComponents
             Name = buttonName;
         }
 
-        public IWebElement GetButtonByName() => DriverHelper
+        public IWebElement GetButtonByName() => DriverExtensions
             .FindElement(By.XPath($"//div[contains(text(), '{Name}')] | //button[contains(text(), '{Name}')] | //a[contains(@href, '{Name}')] | //div[contains(@class, '{Name}')]"));
 
-        public IWebElement GetButtonById() => DriverHelper
+        public IWebElement GetButtonById() => DriverExtensions
          .FindElement(By.Id(Name));
 
         public void Click() => GetButtonById().Click();

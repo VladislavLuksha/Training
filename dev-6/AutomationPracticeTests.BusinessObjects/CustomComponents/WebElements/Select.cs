@@ -1,4 +1,4 @@
-﻿using AutomationPracticeTests.WebDriver.Factory;
+﻿using AutomationPractice.Core.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -15,7 +15,7 @@ namespace AutomationPracticeTests.CustomComponents
         public Select(string name)
         {
             Name = name;
-            Element = DriverHelper.FindSelectElement(By.Id(Name));
+            Element = DriverExtensions.FindSelectElement(By.Id(Name));
         }
 
         public void SelectElementByText(string elementName)

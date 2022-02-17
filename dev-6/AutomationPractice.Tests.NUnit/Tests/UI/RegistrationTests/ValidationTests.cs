@@ -17,8 +17,8 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
         public void TestRegistration_RegistrationOfNewUserWithIncorrectEmail_UserGotWarningMessageUnderEmailField()
         {
             int stringLength = 4;
-            string userEmail = RandomGenerator.GetRandomString(stringLength);
-            string password = RandomGenerator.GetRandomString(stringLength);
+            string userEmail = RandomGeneratorHelper.GetRandomString(stringLength);
+            string password = RandomGeneratorHelper.GetRandomString(stringLength);
             string errorMessageExpected = "Invalid email address.";
 
             User user = UserCreator.CreateUser(userEmail, password);
@@ -44,8 +44,8 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             string errorMessageExpected = "passwd is invalid.";
             int stringLength = 3;
             User user = UserCreator.GetUser(UserType.ChromeUser);
-            user.Email = RandomGenerator.GetRandomEmailString(stringLength);
-            user.Password = RandomGenerator.GetRandomString(stringLength);
+            user.Email = RandomGeneratorHelper.GetRandomEmailString(stringLength);
+            user.Password = RandomGeneratorHelper.GetRandomString(stringLength);
 
             // 1. Go to authentication page
             AuthenticationPage authenticationPage = homePage.OpenHomePage()
@@ -75,8 +75,8 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             int stringEmailLength = 4;
             int stringPasswordLength = 33;
             User user = UserCreator.GetUser(UserType.ChromeUser);
-            user.Email = RandomGenerator.GetRandomEmailString(stringEmailLength);
-            user.Password = RandomGenerator.GetRandomString(stringPasswordLength);
+            user.Email = RandomGeneratorHelper.GetRandomEmailString(stringEmailLength);
+            user.Password = RandomGeneratorHelper.GetRandomString(stringPasswordLength);
 
             // 1. Go to login page
             AuthenticationPage authenticationPage = homePage.OpenHomePage()

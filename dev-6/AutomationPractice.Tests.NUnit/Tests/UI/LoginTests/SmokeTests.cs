@@ -10,16 +10,21 @@ using NUnit.Framework;
 
 namespace AutomationPracticeTests
 {
-    [TestFixture]
+    [TestFixture("ChromeWindows")]
+    [TestFixture("FirefoxWindows")]
     [AllureNUnit]
     [AllureDisplayIgnored]
+    [Parallelizable]
     public class SmokeTests : BaseTest
     {
-        
+        public SmokeTests(string environment) : base(environment)
+        { 
+        }
+
         [Test(Description = "Login with valid credentials")]
         [AllureIssue("ISSUE-1")]
         [AllureSeverity(SeverityLevel.critical)]
-        [AllureOwner("Anton")]
+        [AllureOwner("Vladislav")]
         public void TestLogin_LoginWithValidCredentials_UserSuccesfullyLoggedIn()
         {
             bool isLoggedInExpected = true;

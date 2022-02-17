@@ -17,8 +17,8 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             bool isRegistratedAccountExpected = true;
             int stringLength = 7;
             User user = UserCreator.GetUser(UserType.ChromeUser);
-            user.Email = RandomGenerator.GetRandomEmailString(stringLength);
-            user.Password = RandomGenerator.GetRandomString(stringLength);
+            user.Email = RandomGeneratorHelper.GetRandomEmailString(stringLength);
+            user.Password = RandomGeneratorHelper.GetRandomString(stringLength);
             HomePage homePage = new HomePage();
 
             // 1. Go to authentication page
