@@ -1,12 +1,15 @@
 ﻿using AutomationPracticeTests.CustomComponents;
 using AutomationPracticeTests.Entities;
 using AutomationPracticeTests.PageObjects.BasePages;
+using OpenQA.Selenium;
 
 namespace AutomationPracticeTests.PageObjects.Pages
 {
     public class AccountCreationPage : BasePage
     {
-        public AccountCreationPage() : base() { }
+        private static readonly By MyAccountLbl = By.ClassName("page-heading");
+
+        public AccountCreationPage() : base(MyAccountLbl, "Create an account") { }
 
         public Inputs InputFirstName => new Inputs("customer_firstname");
 

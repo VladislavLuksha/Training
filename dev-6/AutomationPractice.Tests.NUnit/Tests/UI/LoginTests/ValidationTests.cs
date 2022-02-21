@@ -21,12 +21,12 @@ namespace AutomationPracticeTests.Tests.LoginTest
             AuthenticationPage authenticationPage = homePage.OpenHomePage()
                 .OpenAuthenticationPage();
 
-            //Assert.IsNotNull(AuthenticationPage.GetTitle(), $"Title is present on {AuthenticationPage.GetTitle()}");
+            Assert.AreEqual(authenticationPage.TitlePage, authenticationPage.GetTitle(), $"{authenticationPage.TitlePage} not opened!");
 
             // 2. Login
             authenticationPage.FillInLoginForm(user.Email, user.Password)
                 .ClickSignInButton();
-            
+
             string errorMessageActual = authenticationPage.GetIncorectData();
 
             Assert.AreEqual(errorMessageExpected, errorMessageActual, "Correct paswword!");

@@ -6,7 +6,7 @@ namespace AutomationPracticeTests.PageObjects.Pages
 {
     public class MyAccountPage : BasePage
     {
-        public MyAccountPage() : base() { }
+        public MyAccountPage() : base("My account - My Store") { }
 
         public BaseWebElement MyWishlistsElement => new BaseWebElement(By.XPath("//li[@class = 'lnk_wishlist']/a"));
 

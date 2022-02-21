@@ -40,7 +40,8 @@ namespace AutomationPracticeTests.BaseTests
         public virtual void RunAfterEachClass()
         {
             Log.Info("Browser TearDown");
-            Browser.Stop();
+            Browser.QuitDriver();
+            
         }
 
         [SetUp]

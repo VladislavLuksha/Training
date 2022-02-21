@@ -4,7 +4,7 @@ using System;
 using System.Drawing.Imaging;
 using System.IO;
 
-namespace AutomationPractice.Core.Utilities
+namespace AutomationPractice.Core.Helpers
 {
     public static class ScreenshotTakerHelper
     {

@@ -6,7 +6,7 @@ namespace AutomationPracticeTests.PageObjects.Pages
 {
     public class HomePage : BasePage
     {
-        public HomePage() : base() { }
+        public HomePage() : base("My Store") { }
 
         public HomePage OpenHomePage()
         {

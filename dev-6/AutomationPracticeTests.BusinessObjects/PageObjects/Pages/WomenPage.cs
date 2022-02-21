@@ -1,5 +1,5 @@
-﻿using AutomationPracticeTests.CustomComponents;
-using AutomationPracticeTests.CustomComponents.WebElements;
+﻿using AutomationPracticeTests.BusinessObjects.CustomComponents.WebElements;
+using AutomationPracticeTests.CustomComponents;
 using AutomationPracticeTests.PageObjects.BasePages;
 using AutomationPracticeTests.WebDriver.Factory;
 using OpenQA.Selenium;
@@ -8,34 +8,40 @@ namespace AutomationPracticeTests.PageObjects.Pages
 {
     public class WomenPage : BasePage
     {
-        public WomenPage() : base() { }
-
-        public BaseWebElement Product => new BaseWebElement(By.CssSelector(".right-block .product-name"));
+        public WomenPage() : base("Women - My Store") { }
 
         public BaseWebElement AddToWishlistButton => new BaseWebElement(By.Id("wishlist_button"));
 
-        public BaseWebElement AddToCartButton => new BaseWebElement(By.Id("//a[@title = 'Add to cart']"));
+        public BaseWebElement AddToCartButton => new BaseWebElement(By.XPath("//span[text() = 'Add to cart']"));
 
-        public Table ProductTable => new Table("product-container");
+        private BaseWebElements WomenProductsLinks => new BaseWebElements(By.CssSelector(".right-block .product-name"));
 
-        public WomenPage ChooseAnyProduct()
-        { 
-            Product.Click();
-            
-            return this;
+        public IWebElement GetAnyProduct(int position)
+        {
+            var products = WomenProductsLinks.GetElements();
+            return products[position];
         }
 
-        public void AddThreeDifferentProducts()
+        public void AddDifferentProductsToCart(int productsCount)
         {
-            //AddToCartButton.Click();
-            //Browser.Driver.FindElement(By.Id("page")).Click();
-            //ProductTable.GetTable();
+            for (int i = 0; i < productsCount; i++)
+            {
+                var product = GetAnyProduct(i);
+                product.Click();
+                AddToCartButton.Click();
+                Browser.Driver.Navigate().Back();
+            }
         }
 
-        public void ClickAddToWishlistButton()
+        public void AddDifferentProductsToWishlist(int productsCount)
         {
-            AddToWishlistButton.Click();
-            Browser.Driver.FindElement(By.Id("page")).Click();
+            for (int i = 0; i < productsCount; i++)
+            {
+                var product = GetAnyProduct(i);
+                product.Click();
+                AddToWishlistButton.Click();
+                Browser.Driver.Navigate().Back();
+            }
         }
     }
 }

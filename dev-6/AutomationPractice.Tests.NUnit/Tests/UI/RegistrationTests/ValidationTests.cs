@@ -51,11 +51,13 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             AuthenticationPage authenticationPage = homePage.OpenHomePage()
                 .OpenAuthenticationPage();
 
-            //Assert.IsNotNull(AuthenticationPage.GetTitle(), $"Title is present on {AuthenticationPage.GetTitle()}");
+            Assert.AreEqual(authenticationPage.TitlePage, authenticationPage.GetTitle(), $"{authenticationPage.TitlePage} not opened!");
 
             // 2. Fill Email address input and click Create an account button
             AccountCreationPage accountCreationPage = authenticationPage.FillEmail(user.Email)
                 .ClickCreateAccountButton();
+
+            Assert.AreEqual(accountCreationPage.TitlePage, accountCreationPage.GetTitleByLocator(), $"{accountCreationPage.TitlePage} not opened!");
 
             // 3. Fill all required fields
             accountCreationPage.FillRequiredFields(user);
@@ -82,11 +84,13 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             AuthenticationPage authenticationPage = homePage.OpenHomePage()
                 .OpenAuthenticationPage();
 
-            //Assert.IsNotNull(AuthenticationPage.GetTitle(), $"Title is present on {AuthenticationPage.GetTitle()}");
+            Assert.AreEqual(authenticationPage.TitlePage, authenticationPage.GetTitle(), $"{authenticationPage.TitlePage} not opened!");
 
             // 2. Fill Email address input and click Create an account button;
             AccountCreationPage accountCreationPage = authenticationPage.FillEmail(user.Email)
                 .ClickCreateAccountButton();
+
+            Assert.AreEqual(accountCreationPage.TitlePage, accountCreationPage.GetTitleByLocator(), $"{accountCreationPage.TitlePage} not opened!");
 
             // 3. Fill all required fields
             accountCreationPage.FillRequiredFields(user);
@@ -109,7 +113,7 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             AuthenticationPage authenticationPage = homePage.OpenHomePage()
                 .OpenAuthenticationPage();
 
-            //Assert.IsNotNull(AuthenticationPage.GetTitle(), $"Title is present on {AuthenticationPage.GetTitle()}");
+            Assert.AreEqual(authenticationPage.TitlePage, authenticationPage.GetTitle(), $"{authenticationPage.TitlePage} not opened!");
 
             // 2.Fill Email address input and click Create an account button
             AccountCreationPage accountCreationPage = authenticationPage.FillEmail(user.Email)

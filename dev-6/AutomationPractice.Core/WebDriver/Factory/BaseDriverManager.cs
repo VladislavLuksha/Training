@@ -32,6 +32,14 @@ namespace AutomationPracticeTests.WebDriver.Factory
         {
         }
         
+        public void StopServices()
+        {
+            if (ChromeDriverService != null)
+                ChromeDriverService.Dispose();
+            if (FirefoxDriverService != null)
+                FirefoxDriverService.Dispose();
+        }
+
         public abstract IWebDriver GetDriver(double timeoutSec);
     }
 }

@@ -7,7 +7,9 @@ namespace AutomationPracticeTests.PageObjects.Pages
 {
     public class MyWishlistsPage : BasePage
     {
-        public MyWishlistsPage() : base() { }
+        private static readonly By MyWishlistLbl = By.ClassName("page-heading");
+
+        public MyWishlistsPage() : base(MyWishlistLbl, "My wishlists") { }
 
         public BaseWebElement MyWishlistBlock => new BaseWebElement(By.Id("block-history"));
 

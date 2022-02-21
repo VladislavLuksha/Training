@@ -14,7 +14,7 @@ namespace AutomationPracticeTests
     [TestFixture("FirefoxWindows")]
     [AllureNUnit]
     [AllureDisplayIgnored]
-    [Parallelizable]
+    //[Parallelizable]
     public class SmokeTests : BaseTest
     {
         public SmokeTests(string environment) : base(environment)
@@ -35,10 +35,14 @@ namespace AutomationPracticeTests
             AuthenticationPage authenticationPage = homePage.OpenHomePage()
                 .OpenAuthenticationPage();
 
+            Assert.AreEqual(authenticationPage.TitlePage, authenticationPage.GetTitle(), $"{authenticationPage.TitlePage} not opened!");
+            
             // 2. Login
             MyAccountPage myAccountPage = authenticationPage.FillInLoginForm(user.Email, user.Password)
                 .ClickSignInButton();
-          
+
+            Assert.AreEqual(myAccountPage.TitlePage, myAccountPage.GetTitle(), $"{myAccountPage.TitlePage} not opened!");
+
             bool isLoggedInActual = myAccountPage.IsLoggedMyAccountPage();
 
             // 1. Verify the ability to login in account

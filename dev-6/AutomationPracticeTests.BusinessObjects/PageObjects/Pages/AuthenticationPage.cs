@@ -6,7 +6,7 @@ namespace AutomationPracticeTests.PageObjects.BasePages.Pages
 {
     public class AuthenticationPage : BasePage
     {
-        public AuthenticationPage() : base() { }
+        public AuthenticationPage() : base("Login - My Store") { }
 
         public Inputs InputCreateEmail => new Inputs("email_create");
 

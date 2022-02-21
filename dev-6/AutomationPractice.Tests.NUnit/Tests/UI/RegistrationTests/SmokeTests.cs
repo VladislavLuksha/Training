@@ -25,15 +25,21 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             AuthenticationPage authenticationPage = homePage.OpenHomePage()
                 .OpenAuthenticationPage();
 
+            Assert.AreEqual(authenticationPage.TitlePage, authenticationPage.GetTitle(), $"{authenticationPage.TitlePage} not opened!");
+
             // 2. Fill Email address input and click Create an account button
             AccountCreationPage accountCreationPage = authenticationPage.FillEmail(user.Email)
                 .ClickCreateAccountButton();
+
+            Assert.AreEqual(accountCreationPage.TitlePage, accountCreationPage.GetTitleByLocator(), $"{accountCreationPage.TitlePage} not opened!");
 
             // 4. Fill all required fields
             accountCreationPage.FillRequiredFields(user);
 
             // 5. Click Register button
             MyAccountPage myAccountPage = accountCreationPage.ClickRegisterButton();
+
+            Assert.AreEqual(myAccountPage.TitlePage, myAccountPage.GetTitle(), $"{myAccountPage.TitlePage} not opened!");
 
             bool isRegistratedAccountActual = myAccountPage.IsLoggedMyAccountPage();
 
