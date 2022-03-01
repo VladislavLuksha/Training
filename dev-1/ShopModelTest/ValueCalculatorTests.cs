@@ -24,10 +24,10 @@ namespace ShopModelTests
                 new Product() { Name = "audi", Price = 11000, ProductID = 2 },
                 new Product() { Name = "lada", Price = 9000, ProductID = 3 }
             };
-            decimal expected = 30000;
-            decimal sumOfProduct = valueCalculator.ValueCalc(products);
+            decimal sumOfProductsExpected = 30000;
+            decimal sumOfProducts = valueCalculator.ValueCalc(products);
 
-            Assert.AreEqual(expected, sumOfProduct, "The sum of the products is not correct!");
+            Assert.AreEqual(sumOfProductsExpected, sumOfProducts, "The sum of the products isn't correct!");
         }
     }
 }

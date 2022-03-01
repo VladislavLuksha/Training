@@ -30,10 +30,10 @@ namespace ShopModelTests
         [Test]
         public void ToStringTest()
         {
-            string expected = $"Product ID: {productFirst.ProductID}, Name: {productFirst.Name}, Price: {productFirst.Price}";
-            string resultString = productFirst.ToString();
+            string resultStringExpected = $"Product ID: {productFirst.ProductID}, Name: {productFirst.Name}, Price: {productFirst.Price}";
+            string resultStringActual = productFirst.ToString();
 
-            Assert.AreEqual(expected, resultString);
+            Assert.AreEqual(resultStringExpected, resultStringActual);
         }
         
         [Test]
