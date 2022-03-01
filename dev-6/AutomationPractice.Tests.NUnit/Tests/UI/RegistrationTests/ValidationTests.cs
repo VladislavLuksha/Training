@@ -1,19 +1,28 @@
-﻿using AutomationPracticeTests.BaseTests;
+﻿using Allure.Commons;
+using AutomationPracticeTests.BaseTests;
 using AutomationPracticeTests.Entities;
 using AutomationPracticeTests.PageObjects.BasePages.Pages;
 using AutomationPracticeTests.PageObjects.Pages;
 using AutomationPracticeTests.Utilities;
 using AutomationPracticeTests.Utilities.Enums;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 
 namespace AutomationPracticeTests.Tests.UI.RegistrationTests
 {
     [TestFixture]
+    [AllureNUnit]
+    [AllureSuite("RegistrationTests")]
+    [AllureSubSuite("ValidationTests")]
     public class ValidationTests : BaseTest
     {
         private HomePage homePage => new HomePage();
 
-        [Test]
+        [Test(Description = "Registration of new user with incorrect email")]
+        [AllureIssue("ISSUE-4")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Vladislav")]
         public void TestRegistration_RegistrationOfNewUserWithIncorrectEmail_UserGotWarningMessageUnderEmailField()
         {
             int stringLength = 4;
@@ -38,7 +47,10 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             Assert.AreEqual(errorMessageExpected, errorMessageActual, "Correct create email!");
         }
 
-        [Test]
+        [Test(Description = "Registration of new user with password length shorter")]
+        [AllureIssue("ISSUE-5")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Vladislav")]
         public void TestRegistration_RegistrationOfNewUserWithPasswordLengthShorter_UserGotWarningMessageUnderPasswordField()
         {
             string errorMessageExpected = "passwd is invalid.";
@@ -70,7 +82,10 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             Assert.AreEqual(errorMessageExpected, errorMessageActual, "Password is correct(from 5 to 32 symbols) or password more than 32 symbols!");
         }
 
-        [Test]
+        [Test(Description = "Registration of new user with password length longer")]
+        [AllureIssue("ISSUE-6")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Vladislav")]
         public void TestRegistration_RegistrationOfNewUserWithPasswordLengthLonger_UserGotWarningMessageUnderPasswordField()
         {
             string errorMessageExpected = "passwd is too long. Maximum length: 32";
@@ -103,7 +118,10 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             Assert.AreEqual(errorMessageExpected, errorMessageActual, "Password is correct(from 5 to 32 symbols) or password less than 5 symbols!");
         }
 
-        [Test]
+        [Test(Description = "Registration of new user with existent email")]
+        [AllureIssue("ISSUE-8")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Vladislav")]
         public void TestRegistration_RegistrationOfNewUserWithExistentEmail_UserGotWarningMessageUnderEmailField()
         {
             string errorMessageExpected = "An account using this email address has already been registered. Please enter a valid password or request a new one.";

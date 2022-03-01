@@ -1,18 +1,28 @@
-﻿using AutomationPracticeTests.BaseTests;
+﻿using Allure.Commons;
+using AutomationPracticeTests.BaseTests;
 using AutomationPracticeTests.Entities;
 using AutomationPracticeTests.PageObjects.BasePages.Pages;
 using AutomationPracticeTests.PageObjects.Pages;
 using AutomationPracticeTests.Utilities.Enums;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 
-namespace AutomationPracticeTests.Tests.UI.NewFolder
+namespace AutomationPracticeTests.Tests.UI.WishlistTests
 {
     [TestFixture]
+    [AllureNUnit]
+    [AllureSuite("RegistrationTests")]
+    [AllureSubSuite("SmokeTests")]
+    [AllureDisplayIgnored]
     public class SmokeTests : BaseTest
     {
         private HomePage HomePage => new HomePage();
 
-        [Test]
+        [Test(Description = "Adding to auto-created wishlist")]
+        [AllureIssue("ISSUE-9")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Vladislav")]
         public void TestAdding_AddingToAutoCreatedWishlist_WishlistSuccessfullyCreatedAutomaticallyAndProductIsInTheList()
         {
             User user = UserCreator.GetUser(UserType.ChromeUser);
@@ -60,12 +70,14 @@ namespace AutomationPracticeTests.Tests.UI.NewFolder
             Assert.IsTrue(isProductExistsActual, "Product doesn't exist!");
         }
 
-        [Test]
+        [Test(Description = "Adding product to wishlist")]
+        [AllureIssue("ISSUE-10")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Vladislav")]
         public void TestAdding_AddingProductToWishlist_ProductSuccessfullyAddedToWishlist()
         {
             User user = UserCreator.GetUser(UserType.ChromeUser);
             string wishlistName = "product";
-            string wishlistNameDefault = "My wishlist";
 
             // 1. Go to Authentication page
             AuthenticationPage authenticationPage = HomePage.OpenHomePage()
@@ -112,7 +124,10 @@ namespace AutomationPracticeTests.Tests.UI.NewFolder
             Assert.IsTrue(isProductExistsActual, "Product wasn't added to your Wishlist!");
         }
 
-        [Test]
+        [Test(Description = "Adding 3 different products to cart")]
+        [AllureIssue("ISSUE-11")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Vladislav")]
         public void TestAdding_AddingThreeDifferentProductsToCart_ThreeProductsSuccessfullyAddedToCart()
         {
             User user = UserCreator.GetUser(UserType.ChromeUser);

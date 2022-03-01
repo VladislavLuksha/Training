@@ -1,16 +1,25 @@
-﻿using AutomationPracticeTests.BaseTests;
+﻿using Allure.Commons;
+using AutomationPracticeTests.BaseTests;
 using AutomationPracticeTests.Entities;
 using AutomationPracticeTests.PageObjects.BasePages.Pages;
 using AutomationPracticeTests.PageObjects.Pages;
 using AutomationPracticeTests.Utilities.Enums;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 
-namespace AutomationPracticeTests.Tests.LoginTest
+namespace AutomationPracticeTests.Tests.UI.LoginTests
 {
     [TestFixture]
+    [AllureNUnit]
+    [AllureSuite("LoginTests")]
+    [AllureSubSuite("ValidationTests")]
     public class ValidationTests : BaseTest
     {
-        [Test]
+        [Test(Description = "Login with invalid credentials")]
+        [AllureIssue("ISSUE-2")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Vladislav")]
         public void TestLogin_LoginWithInvalidCredentials_UserGotWarningMessagePasswordField()
         {
             string errorMessageExpected = "Authentication failed.";

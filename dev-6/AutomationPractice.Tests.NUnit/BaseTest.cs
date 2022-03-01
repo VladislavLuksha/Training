@@ -1,6 +1,9 @@
-﻿using AutomationPractice.Core.Helpers;
+﻿using Allure.Commons;
+using AutomationPractice.Core.Helpers;
 using AutomationPracticeTests.Utilities.Logger;
 using AutomationPracticeTests.WebDriver.Factory;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
@@ -9,6 +12,8 @@ using System.IO;
 
 namespace AutomationPracticeTests.BaseTests
 {
+     [AllureNUnit]
+     [AllureParentSuite("Root Suite")]
      [SetUpFixture]
      public class BaseTest
      {
@@ -34,6 +39,9 @@ namespace AutomationPracticeTests.BaseTests
 
             Browser = Browser.Instance;
             Browser.WindowMaximise();
+
+            AllureExtensions.WrapSetUpTearDownParams(() => { AllureLifecycle.Instance.CleanupResultDirectory(); },
+               "Clear Allure Results Directory");
         }
 
         [OneTimeTearDown]
@@ -41,7 +49,6 @@ namespace AutomationPracticeTests.BaseTests
         {
             Log.Info("Browser TearDown");
             Browser.QuitDriver();
-            
         }
 
         [SetUp]
@@ -55,6 +62,7 @@ namespace AutomationPracticeTests.BaseTests
             if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
             {
                 TestContext.AddTestAttachment(ScreenshotTakerHelper.TakeScreenshot(ScreenshotsDirectory, TestContext.CurrentContext.Test.Name));
+                AllureLifecycle.Instance.AddAttachment(ScreenshotTakerHelper.TakeScreenshot(ScreenshotsDirectory, TestContext.CurrentContext.Test.Name));
             }
         }
      }

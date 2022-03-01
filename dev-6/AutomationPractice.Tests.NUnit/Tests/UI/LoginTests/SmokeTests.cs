@@ -8,15 +8,19 @@ using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
 
-namespace AutomationPracticeTests
+namespace AutomationPracticeTests.Tests.UI.LoginTests
 {
-    [TestFixture("ChromeWindows")]
-    [TestFixture("FirefoxWindows")]
+    [TestFixture]
+    //[TestFixture("FirefoxWindows")]
     [AllureNUnit]
+    [AllureSuite("LoginTests")]
+    [AllureSubSuite("SmokeTests")]
     [AllureDisplayIgnored]
     //[Parallelizable]
     public class SmokeTests : BaseTest
     {
+        public SmokeTests() { }
+
         public SmokeTests(string environment) : base(environment)
         { 
         }

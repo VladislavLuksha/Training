@@ -1,17 +1,27 @@
-﻿using AutomationPracticeTests.BaseTests;
+﻿using Allure.Commons;
+using AutomationPracticeTests.BaseTests;
 using AutomationPracticeTests.Entities;
 using AutomationPracticeTests.PageObjects.BasePages.Pages;
 using AutomationPracticeTests.PageObjects.Pages;
 using AutomationPracticeTests.Utilities;
 using AutomationPracticeTests.Utilities.Enums;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 
 namespace AutomationPracticeTests.Tests.UI.RegistrationTests
 {
     [TestFixture]
+    [AllureNUnit]
+    [AllureSuite("RegistrationTests")]
+    [AllureSubSuite("SmokeTests")]
+    [AllureDisplayIgnored]
     public class SmokeTests : BaseTest
     {
-        [Test]
+        [Test(Description = "Registration of new user with valid credentials")]
+        [AllureIssue("ISSUE-3")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Vladislav")]
         public void TestRegistration_RegistrationOfNewUser_UserSuccessfullyRegistered()
         {
             bool isRegistratedAccountExpected = true;
