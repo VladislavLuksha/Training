@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace ShopModelTests
 {
     [TestFixture]
-    public class DiscountTest
+    public class DiscountTests
     {
         Discount_1 discount_1 = new Discount_1();
         Discount_5 discount_5 = new Discount_5();

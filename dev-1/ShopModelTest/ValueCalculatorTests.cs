@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace ShopModelTests
 {
     [TestFixture]
-    public class ValueCalculatorTest
+    public class ValueCalculatorTests
     {
         private ValueCalculator valueCalculator;
 

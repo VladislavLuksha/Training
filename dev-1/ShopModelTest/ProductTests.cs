@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace ShopModelTests
 {
     [TestFixture]
-    public class ProductTest
+    public class ProductTests
     {
         private Product productFirst;
         private Product productSecond;

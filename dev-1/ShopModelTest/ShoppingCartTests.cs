@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace ShopModelTests
 {
     [TestFixture]
-    public class ShoppingCartTest
+    public class ShoppingCartTests
     {
         ValueCalculator valueCalculator;
         Discount_1 discount_1;
