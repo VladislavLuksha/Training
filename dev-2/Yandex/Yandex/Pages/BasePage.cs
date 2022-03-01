@@ -7,6 +7,7 @@ namespace Yandex.Pages
     abstract public class BasePage
     {
         private const int WAIT_FOR_ELEMENT_TIMEOUT = 20;
+
         protected IWebDriver Driver { get; set; }
 
         protected WebDriverWait Wait { get; set; }

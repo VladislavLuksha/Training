@@ -1,21 +1,18 @@
 ﻿using OpenQA.Selenium;
-using Yandex.Utils;
 
 namespace Yandex.Pages
 {
     public class YandexPage : BasePage
     {
-        private YandexLocators yandexLocators;
-        public YandexPage(IWebDriver driver) : base(driver)
-        {
-            yandexLocators = new YandexLocators();
-        }
+        private readonly By loginButton = By.XPath("//a[contains(@class, 'item_enter')]");
 
+        public YandexPage(IWebDriver driver) : base(driver) { }
+       
         protected override string Url => "https://www.yandex.by";
 
         public void NavigateOnAuthorizationPage()
         {
-            NavigateOnButton(yandexLocators.loginButton);
+            NavigateOnButton(loginButton);
         }
     }
 }
