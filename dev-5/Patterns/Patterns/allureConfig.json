@@ -1,6 +1,6 @@
 {
   "allure": {
-    "directory": "D:\\task1\\Training\\dev-5\\Patterns\\Patterns\\Allure-results",
+    "directory": "../../../Allure-results",
     "links": [
       "{link}",
       "https://testrail.com/browse/{tms}",

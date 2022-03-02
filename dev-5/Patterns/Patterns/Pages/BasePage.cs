@@ -31,10 +31,10 @@ namespace Patterns.Pages
 
         public bool IsLoaded()
         {
-            return getPageTitle().Equals(Title);
+            return GetPageTitle().Equals(Title);
         }
 
-        public string getPageTitle()
+        public string GetPageTitle()
         {
             return Driver.Title;
         }

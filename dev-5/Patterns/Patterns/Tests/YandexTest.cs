@@ -2,38 +2,29 @@ using Allure.Commons;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using Patterns.Helpers;
 using Patterns.Pages;
 using Patterns.Providers;
+using Patterns.Tests;
 using Patterns.Utils;
 
 namespace Patterns
 {
     [TestFixture]
     [AllureNUnit]
-    [AllureSuite("YandexTest")]
+    [AllureSuite("YandexTests")]
     [AllureDisplayIgnored]
-    public class YandexTest
+    public class YandexTest : BaseTest
     {
-        private IWebDriver driver;
         private YandexPage yandexPage;
         private CredentialsConstants credentialsConstants;
      
         [SetUp]
         public void Setup()
         {
-            driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("https://www.yandex.by");
-            driver.Manage().Window.Maximize();
-            yandexPage = new YandexPage(driver);
+            Driver.Navigate().GoToUrl("https://www.yandex.by");
+            yandexPage = new YandexPage(Driver);
             InitializeCredentials();
-        }
-
-        private void InitializeCredentials()
-        {
-            new CredentialsProvider().Provide(out CredentialsConstants credentialsConstantsObject);
-            credentialsConstants = credentialsConstantsObject;
         }
 
         [Test(Description = "The test verifies that the Authorization page is logged in")]
@@ -47,10 +38,9 @@ namespace Patterns
         public void GoToAuthorizationPageTest()
         {
             bool loginStatusExpected = true;
-            string fileName = "YandexPageScreenshot.png";
 
-            yandexPage.TakeScreenshotForYandexPage(fileName);
-            
+            ScreenshotTakerHelper.TakeScreenshot(ScreenshotsDirectory, "YandexPage");
+
             // 1. Login to Authorization Page
             AuthorizationPage authorizationPage = yandexPage.GoToAuthorizationPage();
       
@@ -88,11 +78,11 @@ namespace Patterns
             // 1. Verify that the Authorization page is logged out 
             Assert.AreEqual(loginStatusExpected, logOutStatusActual, "The Authorization page isn't logged out!!!");
         }
-     
-        [TearDown]
-        public void Cleanup()
+
+        private void InitializeCredentials()
         {
-            driver.Quit();
+            new CredentialsProvider().Provide(out CredentialsConstants credentialsConstantsObject);
+            credentialsConstants = credentialsConstantsObject;
         }
     }
 }
