@@ -1,0 +1,96 @@
+{
+  "uuid": "ab024e11-0cf6-4f75-97e2-059af0c04d48-tr-0-1001",
+  "historyId": "Patterns.YandexTest.GoToAuthorizationPageTest",
+  "fullName": "Patterns.YandexTest.GoToAuthorizationPageTest",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "MSQ-NBW-8404"
+    },
+    {
+      "name": "package",
+      "value": "Patterns"
+    },
+    {
+      "name": "testMethod",
+      "value": "GoToAuthorizationPageTest"
+    },
+    {
+      "name": "testClass",
+      "value": "YandexTest"
+    },
+    {
+      "name": "tag",
+      "value": "CI"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "owner",
+      "value": "Vladislav"
+    },
+    {
+      "name": "subSuite",
+      "value": "GoTo"
+    },
+    {
+      "name": "suite",
+      "value": "YandexTest"
+    }
+  ],
+  "links": [
+    {
+      "name": "ISSUE-1",
+      "url": "https://jira.com/browse/ISSUE-1",
+      "type": "issue"
+    },
+    {
+      "name": "TMS-12",
+      "url": "https://testrail.com/browse/TMS-12",
+      "type": "tms"
+    }
+  ],
+  "name": "GoToAuthorizationPageTest",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "GoToAuthorizationPageTest"
+  },
+  "stage": "finished",
+  "description": "Go to authorization page\n",
+  "steps": [
+    {
+      "name": "GoToAuthorizationPageTest",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "5930d329ce5444778f64fc6657f74598-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1643207250239,
+      "stop": 1643207257943
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1643207250239,
+  "stop": 1643207257946
+}

@@ -1,0 +1,44 @@
+{
+  "uuid": "fba8f7a0-6869-496c-8156-536b817d23b8-tc-0-1000",
+  "name": "Patterns.YandexTest.LogOutToAuthorizationPageTest",
+  "children": [
+    "0f1eb4d0-43a1-4383-9ea4-c46182ed5af9-tr-0-1002"
+  ],
+  "befores": [
+    {
+      "name": "Setup",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1643207267246,
+      "stop": 1643207267246
+    }
+  ],
+  "afters": [
+    {
+      "name": "Cleanup",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1643207267246,
+      "stop": 1643207267246
+    }
+  ],
+  "links": [],
+  "start": 1643207257965,
+  "stop": 1643207267249
+}
