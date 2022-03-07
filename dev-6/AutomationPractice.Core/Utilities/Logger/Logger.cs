@@ -16,5 +16,15 @@ namespace AutomationPracticeTests.Utilities.Logger
         {
             Log.Info(message);
         }
+
+        public void Debug(string message)
+        {
+            Log.Info(message);
+        }
+
+        public void Error(string message)
+        {
+            Log.Info(message);
+        }
     }
 }
