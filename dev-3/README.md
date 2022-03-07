@@ -1,12 +1,12 @@
-# Locate css and xpath selectors for following elements in yandex.by 
+# Locate css and xpath selectors for following elements in yandex.by:
 
-# Start page:
+## Start page:
 
 a) Search input
 
 b) Find button
 
-# Email page (switch from full to light version, see screenshot a):
+## Email page (switch from full to light version, see screenshot a):
 
 c) Write email button
 
@@ -18,7 +18,7 @@ f) 1 locator for all 5 elements: Inbox, Sent, Deleted, Spam and Draft links
 
 g) 1 locator for all 4 elements: Inbox, Deleted, Spam and Draft links
 
-# New email page:
+## New email page:
 
 h) To input
 
@@ -38,8 +38,10 @@ o) Xpath only. Update locator (just add any code after it, but initial part must
 
 p) Update locator (just add any code after it, but initial part must be presented as beginning of locator) “.b-buttons>input” | “//div[@class='b-buttons']/input” to grab all 3 elements: Choose Files, Save and Cancel inputs
 
-# Sent page:
+## Sent page:
 
 q) Css only. Locator to get even links to topics starting from 4th email
 
 r) Xpath only. Locator to get all links to topics starting from 2nd email
+
+### Performance - [here](https://github.com/VladislavLuksha/Training/blob/dev-3/dev-3/task-3.md)
