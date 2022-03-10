@@ -1,0 +1,20 @@
+{
+  "Users": [
+    {
+      "Email": "vladik@gmail.com",
+      "FirstName": "Vladislav",
+      "LastName": "Luksha",
+      "Password": "11111",
+      "Address": "Minsk, Lenina street",
+      "City": "Minsk",
+      "Country": "United States",
+      "State": "Arizona",
+      "PostalCode": "00000",
+      "HomePhone": "1234567"
+    },
+    {
+      "Email": "vladik@gmail.com",
+      "Password": "111111"
+    }
+  ]
+}
