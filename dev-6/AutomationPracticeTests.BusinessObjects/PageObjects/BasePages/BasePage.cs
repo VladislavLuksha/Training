@@ -8,6 +8,11 @@ namespace AutomationPracticeTests.PageObjects.BasePages
 {
     public abstract class BasePage
     {
+        protected BasePage()
+        {
+
+        }
+
         protected BasePage(string title)
         {
             TitlePage = title;
@@ -23,14 +28,7 @@ namespace AutomationPracticeTests.PageObjects.BasePages
 
         public TopNavigation TopNavigation => new TopNavigation();
 
-        public BaseWebElement IncorrectData => new BaseWebElement(By.XPath("//div[@class='alert alert-danger']//li"));
-
         protected By TitleLocator { get; set; }
-
-        public string GetIncorectData()
-        {
-            return IncorrectData.GetText();
-        }
 
         public CartPage GoToCartPage()
         {

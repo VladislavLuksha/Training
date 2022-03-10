@@ -1,6 +1,5 @@
 ﻿using AutomationPractice.Core.Extensions;
 using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
 
 namespace AutomationPracticeTests.CustomComponents.WebElements
@@ -16,11 +15,5 @@ namespace AutomationPracticeTests.CustomComponents.WebElements
 
         public IList<IWebElement> GetInputByXPath() => DriverExtensions
            .FindElements(By.XPath($"//div[@class = '{Name}']"));
-
-        //public string[][] GetTable()
-        //{
-        //    var table = GetInputByXPath();
-        //    var rows = table;
-        //}
     }
 }

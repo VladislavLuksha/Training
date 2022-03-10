@@ -42,7 +42,7 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             authenticationPage.FillEmail(user.Email)
                 .ClickCreateAccountButton();
 
-            string errorMessageActual = authenticationPage.GetIncorectData();
+            string errorMessageActual = authenticationPage.AlertMessage.GetErrorMessage();
 
             Assert.AreEqual(errorMessageExpected, errorMessageActual, "Correct create email!");
         }
@@ -77,7 +77,7 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             // 5. Click Register button
             accountCreationPage.ClickRegisterButton();
 
-            string errorMessageActual = accountCreationPage.GetIncorectData();
+            string errorMessageActual = accountCreationPage.AlertMessage.GetErrorMessage();
 
             Assert.AreEqual(errorMessageExpected, errorMessageActual, "Password is correct(from 5 to 32 symbols) or password more than 32 symbols!");
         }
@@ -113,7 +113,7 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             // 5. Click Register button
             accountCreationPage.ClickRegisterButton();
 
-            string errorMessageActual = accountCreationPage.GetIncorectData();
+            string errorMessageActual = accountCreationPage.AlertMessage.GetErrorMessage();
 
             Assert.AreEqual(errorMessageExpected, errorMessageActual, "Password is correct(from 5 to 32 symbols) or password less than 5 symbols!");
         }
@@ -137,7 +137,7 @@ namespace AutomationPracticeTests.Tests.UI.RegistrationTests
             AccountCreationPage accountCreationPage = authenticationPage.FillEmail(user.Email)
                 .ClickCreateAccountButton();
 
-            string errorMessageActual = accountCreationPage.GetIncorectData();
+            string errorMessageActual = accountCreationPage.AlertMessage.GetErrorMessage();
 
             Assert.AreEqual(errorMessageExpected, errorMessageActual, "This user hasn't registered!");
         }

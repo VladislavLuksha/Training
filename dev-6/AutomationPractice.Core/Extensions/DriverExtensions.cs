@@ -67,28 +67,6 @@ namespace AutomationPractice.Core.Extensions
             js.ExecuteScript("arguments[0].scrollIntoView(true);", element);
         }
 
-        //public static bool InvisibilityOfElementLocated(By locator)
-        //{
-        //    try
-        //    {
-        //        IWebElement element = Browser.Driver.FindElement(locator);
-
-        //        return !element.Displayed;
-        //    }
-        //    catch(NoSuchElementException)
-        //    {
-        //        return true;
-        //    }
-        //    catch (WebDriverTimeoutException)
-        //    {
-        //        return true;
-        //    }
-        //    catch (StaleElementReferenceException)
-        //    {
-        //        return true;
-        //    }
-        //}
-
         public static bool InvisibilityOfElementLocated(By locator)
         {
             return Browser.Wait.Until(ExpectedConditions.InvisibilityOfElementLocated(locator));

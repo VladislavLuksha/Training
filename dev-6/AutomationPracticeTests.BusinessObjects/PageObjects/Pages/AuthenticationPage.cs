@@ -1,4 +1,5 @@
-﻿using AutomationPracticeTests.CustomComponents;
+﻿using AutomationPracticeTests.BusinessObjects.PageObjects.Componets;
+using AutomationPracticeTests.CustomComponents;
 using AutomationPracticeTests.PageObjects.Pages;
 using OpenQA.Selenium;
 
@@ -19,6 +20,8 @@ namespace AutomationPracticeTests.PageObjects.BasePages.Pages
         public Buttons ButtonSignIn => new Buttons("SubmitLogin");
 
         public BaseWebElement NotCorrectCreateEmail => new BaseWebElement(By.XPath("//div[@id='create_account_error']//li"));
+
+        public AlertMessage AlertMessage => new AlertMessage();
 
         public AuthenticationPage FillEmail(string email)
         {

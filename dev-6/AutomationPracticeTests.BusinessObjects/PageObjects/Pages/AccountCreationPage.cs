@@ -1,4 +1,5 @@
-﻿using AutomationPracticeTests.CustomComponents;
+﻿using AutomationPracticeTests.BusinessObjects.PageObjects.Componets;
+using AutomationPracticeTests.CustomComponents;
 using AutomationPracticeTests.Entities;
 using AutomationPracticeTests.PageObjects.BasePages;
 using OpenQA.Selenium;
@@ -30,6 +31,8 @@ namespace AutomationPracticeTests.PageObjects.Pages
         public Inputs InputHomePhone => new Inputs("phone");
 
         public Buttons RegisterButton => new Buttons("submitAccount");
+
+        public AlertMessage AlertMessage => new AlertMessage();
 
         public void FillRequiredFields(User user)
         {

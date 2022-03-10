@@ -36,7 +36,7 @@ namespace AutomationPracticeTests.Tests.UI.LoginTests
             authenticationPage.FillInLoginForm(user.Email, user.Password)
                 .ClickSignInButton();
 
-            string errorMessageActual = authenticationPage.GetIncorectData();
+            string errorMessageActual = authenticationPage.AlertMessage.GetErrorMessage();
 
             Assert.AreEqual(errorMessageExpected, errorMessageActual, "Correct paswword!");
         }

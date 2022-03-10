@@ -20,14 +20,7 @@ namespace AutomationPracticeTests.CustomComponents
 
         public void SelectElementByText(string elementName)
         {
-            try
-            {
-                SelectElement.SelectByText(elementName);
-            }
-            catch(NoSuchElementException e)
-            {
-
-            }
+            SelectElement.SelectByText(elementName);
         }
     }
 }
